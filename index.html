@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spider Web Adventure</title>
+
+    <!-- Link to GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <!-- Particles.js for sparkles -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particles.js container -->
+    <div id="particles-js"></div>
+
+    <div class="content-container">
+        <h1 class="title">Spider Web Adventure</h1>
+        <p class="description">Explore the unknown. Enter the web!</p>
+        <button class="roblox-btn" onclick="window.location.href='https://www.roblox.com/'">
+            <i class="fas fa-gamepad"></i> Go to Roblox
+        </button>
+        <div class="subtitles">
+            <p>Join us for an exciting journey through the world of endless possibilities!</p>
+        </div>
+    </div>
+
+    <script>
+        // GSAP Animations
+        gsap.from(".title", { opacity: 0, y: -100, duration: 1, ease: "power2.out" });
+        gsap.from(".description", { opacity: 0, y: 100, duration: 1, delay: 0.3, ease: "power2.out" });
+        gsap.from(".roblox-btn", { opacity: 0, y: 50, duration: 1, delay: 0.6, ease: "power2.out" });
+        gsap.from(".subtitles", { opacity: 0, y: 50, duration: 1, delay: 0.9, ease: "power2.out" });
+
+        // Particles.js for sparkling effect
+        particlesJS("particles-js", {
+            particles: {
+                number: {
+                    value: 100,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#ffffff"
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 4,
+                        size_min: 0.3
+                    }
+                },
+                line_linked: {
+                    enable: false
+                },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>
